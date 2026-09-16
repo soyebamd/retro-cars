@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" type="stylesheet" />
+
+    <title>RetroRide — Classic Cars</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <span class="logo-small">THE CLASSIC CAR COLLECTION</span>
+          <span class="logo-main">RETRO<span>RIDE</span></span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">EST. 1965 • CLASSIC AUTOMOBILES</p>
+
+          <h1>
+            Cars with a
+            <span>story.</span>
+          </h1>
+
+          <p class="hero-text">
+            Discover beautifully preserved classics, timeless icons and rare
+            automobiles from another era.
+          </p>
+        </div>
+      </section>
+
+      <section class="inventory-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark">THE COLLECTION</p>
+            <h2>Find your classic</h2>
+          </div>
+
+          <p id="resultsCount" class="results-count"></p>
+        </div>
+
+        <div class="search-panel">
+          <div class="search-box">
+            <label for="searchInput">Search</label>
+
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search brand, model or color..."
+            />
+          </div>
+
+          <div class="filter-grid">
+            <div class="filter-box">
+              <label for="brandSelect">Brand</label>
+
+              <select id="brandSelect">
+                <option value="">All brands</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <label for="modelSelect">Model</label>
+
+              <select id="modelSelect">
+                <option value="">All models</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <label for="yearSelect">Year</label>
+
+              <select id="yearSelect">
+                <option value="">All years</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <label for="priceSelect">Price</label>
+
+              <select id="priceSelect">
+                <option value="">All prices</option>
+                <option value="0-25000">Under $25,000</option>
+                <option value="25000-50000">$25,000 – $50,000</option>
+                <option value="50000-100000">$50,000 – $100,000</option>
+                <option value="100000-500000">$100,000 – $500,000</option>
+                <option value="500000+">$500,000+</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <label for="colorSelect">Color</label>
+
+              <select id="colorSelect">
+                <option value="">All colors</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <label for="conditionSelect">Condition</label>
+
+              <select id="conditionSelect">
+                <option value="">All conditions</option>
+                <option value="5">5 — Concours</option>
+                <option value="4">4 — Excellent</option>
+                <option value="3">3 — Good</option>
+                <option value="2">2 — Fair</option>
+                <option value="1">1 — Project</option>
+                <option value="0">0 — Restoration</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-footer">
+            <button id="clearFilters" class="clear-button">
+              Clear filters
+            </button>
+          </div>
+        </div>
+
+        <div id="container"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>RETRO<span>RIDE</span></p>
+      <small>Classic automobiles. Timeless stories.</small>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

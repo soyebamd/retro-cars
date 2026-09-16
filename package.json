@@ -1,0 +1,31 @@
+{
+  "name": "car-vault",
+  "version": "1.0.0",
+  "description": "Retro car collection App",
+  "homepage": "https://github.com/soyebamd/retro-cars#readme",
+  "bugs": {
+    "url": "https://github.com/soyebamd/retro-cars/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soyebamd/retro-cars.git"
+  },
+  "license": "ISC",
+  "author": "Soyeb Ahmed",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "watch": "nodemon"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.10.3",
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,572 @@
+:root {
+  --cream: #f4efe5;
+  --cream-dark: #e8dece;
+  --paper: #fbf8f1;
+
+  --ink: #211e1a;
+  --muted: #756e64;
+
+  --burgundy: #6d1d26;
+  --burgundy-dark: #4b1118;
+
+  --gold: #b88a44;
+  --green: #415440;
+
+  --border: rgba(33, 30, 26, 0.14);
+
+  --shadow: 0 15px 40px rgba(45, 34, 23, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 20px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  color: var(--ink);
+  text-decoration: none;
+  text-align: center;
+}
+
+.logo-small {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.logo-main {
+  display: block;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  line-height: 0.9;
+  letter-spacing: 3px;
+}
+
+.logo-main span,
+.site-footer span {
+  color: var(--burgundy);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(rgba(32, 24, 18, 0.35), rgba(32, 24, 18, 0.65)),
+    url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1800&q=85")
+      center / cover;
+
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.05),
+    transparent 50%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(850px, 90%);
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.eyebrow.dark {
+  color: var(--burgundy);
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(52px, 8vw, 92px);
+  line-height: 0.95;
+  font-weight: 600;
+}
+
+.hero h1 span {
+  display: block;
+  color: #e1b871;
+  font-style: italic;
+}
+
+.hero-text {
+  width: min(600px, 100%);
+  margin: 25px auto 0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================
+   INVENTORY
+========================= */
+
+.inventory-section {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+
+  padding: 90px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  margin-top: 5px;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 600;
+}
+
+.results-count {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   SEARCH PANEL
+========================= */
+
+.search-panel {
+  padding: 26px;
+
+  background: var(--paper);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+
+  margin-bottom: 45px;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box label,
+.filter-box label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  color: var(--muted);
+}
+
+.search-box input,
+.filter-box select {
+  width: 100%;
+
+  border: 1px solid var(--border);
+  background: white;
+
+  color: var(--ink);
+
+  padding: 14px 15px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.search-box input:focus,
+.filter-box select:focus {
+  border-color: var(--burgundy);
+
+  box-shadow: 0 0 0 3px rgba(109, 29, 38, 0.08);
+}
+
+.filter-grid {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 14px;
+}
+
+.filter-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 18px;
+}
+
+.clear-button {
+  border: 0;
+
+  background: var(--burgundy);
+  color: white;
+
+  padding: 12px 20px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.clear-button:hover {
+  background: var(--burgundy-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CAR GRID
+========================= */
+
+.cards {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+
+  margin-top: 35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  background: #fbf8f1;
+
+  border: 1px solid rgba(33, 30, 26, 0.15);
+
+  box-shadow:
+    0 8px 20px rgba(33, 30, 26, 0.08),
+    0 2px 5px rgba(33, 30, 26, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(33, 30, 26, 0.14),
+    0 5px 10px rgba(33, 30, 26, 0.08);
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card img {
+  display: block;
+
+  width: 100%;
+  height: 240px;
+
+  object-fit: cover;
+
+  background: #d8d0c3;
+
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+/* Brand */
+.card h2 {
+  margin: 20px 20px 3px;
+
+  color: #6d1d26;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Model */
+.card p:nth-of-type(1) {
+  margin: 0 20px;
+
+  color: #211e1a;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  line-height: 1.15;
+}
+
+/* Year */
+.card p:nth-of-type(2) {
+  margin: 6px 20px 0;
+
+  color: #756e64;
+
+  font-size: 13px;
+}
+
+/* Price */
+.card p:nth-of-type(3) {
+  margin: 15px 20px 0;
+
+  color: #211e1a;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Color */
+.card p:nth-of-type(4) {
+  margin: 14px 20px 0;
+
+  color: #756e64;
+
+  font-size: 13px;
+}
+
+/* Condition */
+.card p:nth-of-type(5) {
+  margin: 7px 20px 0;
+
+  color: #b88a44;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Sold */
+.card p:nth-of-type(6) {
+  width: fit-content;
+
+  margin: 16px 20px 20px;
+  padding: 6px 10px;
+
+  border-radius: 2px;
+
+  background: #e7ede3;
+
+  color: #415440;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+.condition {
+  color: var(--gold);
+
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  background: var(--paper);
+
+  border: 1px solid var(--border);
+}
+
+.no-results h3 {
+  margin-bottom: 8px;
+
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+
+.no-results p {
+  color: var(--muted);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  background: var(--ink);
+
+  color: white;
+}
+
+.site-footer p {
+  margin-bottom: 5px;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 34px;
+
+  letter-spacing: 3px;
+}
+
+.site-footer small {
+  color: #aaa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .filter-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .logo-main {
+    font-size: 40px;
+  }
+
+  .inventory-section {
+    padding: 60px 0;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .results-count {
+    margin-top: 15px;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-image-wrapper {
+    height: 240px;
+  }
+}
